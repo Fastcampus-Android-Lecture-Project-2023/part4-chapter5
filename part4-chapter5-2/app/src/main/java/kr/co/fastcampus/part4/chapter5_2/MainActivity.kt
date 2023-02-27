@@ -13,6 +13,8 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
 import kr.co.fastcampus.part4.chapter5_2.ui.theme.ViewModelTheme
 
 class MainActivity : ComponentActivity() {
@@ -31,9 +33,23 @@ class MainActivity : ComponentActivity() {
     }
 }
 
+// 단계 2: `ViewModel`을 상속받은 `ToDoViewModel`을 만듭니다.
+// 첫 단계에서는 내용을 비워두고 시작합시다.
+
+// 단계 3: `TopLevel`의 파라미터로 `ToDoViewModel` 타입의
+// `viewModel`을 전달합니다. 기본 값은 `viewModel()`로 설정합시다.
+// 에러가 발생하면 아래의 `import` 문을 추가합니다.
+// `import androidx.lifecycle.viewmodel.compose.viewModel`
 @Composable
 fun TopLevel() {
+    // 단계 4: text, setText를 뷰 모델로 옮겨봅시다.
+    // 뷰 모델의 프로퍼티로 변경할 경우에는 destrunction (비구조화,
+    // 구조 분해)는 사용할 수 없으니 `by`를 써봅시다.
+    // `remember`는 제거해야 합니다.
     val (text, setText) = remember { mutableStateOf("") }
+
+    // 단계 5: `toDoList`, `onSubmit`, `onEdit`, `onToggle`,
+    // `onDelete`를 모두 뷰 모델로 옮겨봅시다.
     val toDoList = remember { mutableStateListOf<ToDoData>() }
 
     val onSubmit: (String) -> Unit = {
@@ -59,13 +75,22 @@ fun TopLevel() {
 
     Scaffold {
         Column {
-            ToDoInput(text, setText, onSubmit)
+            ToDoInput(
+                text = text,
+                onTextChange = setText,
+                onSubmit = onSubmit
+            )
             LazyColumn {
                 items(
                     items = toDoList,
                     key = { it.key }
                 ) { toDoData ->
-                    ToDo(toDoData, onEdit, onToggle, onDelete)
+                    ToDo(
+                        toDoData = toDoData,
+                        onEdit = onEdit,
+                        onToggle = onToggle,
+                        onDelete = onDelete
+                    )
                 }
             }
         }
