@@ -28,3 +28,16 @@ Part4 Chapter5의 예제와 실습을 모두 담고 있습니다.
 
  * 단계 5: `toDoList`, `onSubmit`, `onEdit`, `onToggle`,
   `onDelete`를 모두 뷰 모델로 옮겨봅시다.
+
+## Compose ViewModel 실습코드 (part4-chapter5-3)
+
+[part4-chapter5-2](part4-chapter5-2) 디렉토리를 Android Studio에서 오픈하세요.
+
+ * 단계 1: "androidx.compose.runtime:runtime-livedata:$compose_ui_version" 의존성을 추가합니다.
+
+ * 단계 2: text 상태를 라이브 데이터로 변경합니다.
+  사용하는 측에서는 `text.observeAsState()`로 구독하세요.
+
+ * 단계 3: toDoList 상태를 라이브 데이터로 변경합니다.
+  모든 연산에서 List를 새로 만들어 라이브 데이터로 전달해야 합니다!!!
+  (초 비추!!)
