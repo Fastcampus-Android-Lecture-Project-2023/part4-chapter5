@@ -46,6 +46,8 @@ Part4 Chapter5의 예제와 실습을 모두 담고 있습니다.
 
 [part4-chapter5-4](part4-chapter5-4) 디렉토리를 Android Studio에서 오픈하세요.
 
+![Composition Local 예](./screenshots/composition-local.png)
+
   * 단계 1: `CompositionLocalProvider`을 이용하면 특정 블록에 암시적인 값을 설정할 있습니다.
   `CompositionLocalProvider(LocalContentAlpha provides ContentAlpha.abled)`
   등을 설정해봅시다.
