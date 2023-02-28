@@ -31,7 +31,7 @@ Part4 Chapter5의 예제와 실습을 모두 담고 있습니다.
 
 ## Compose ViewModel 실습코드 (part4-chapter5-3)
 
-[part4-chapter5-2](part4-chapter5-2) 디렉토리를 Android Studio에서 오픈하세요.
+[part4-chapter5-3](part4-chapter5-3) 디렉토리를 Android Studio에서 오픈하세요.
 
  * 단계 1: "androidx.compose.runtime:runtime-livedata:$compose_ui_version" 의존성을 추가합니다.
 
