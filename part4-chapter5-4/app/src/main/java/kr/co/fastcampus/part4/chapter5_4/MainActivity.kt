@@ -53,7 +53,6 @@ fun Greeting() {
     // 단계 6: LocalElevation의 값을 `CompositionLocalProvider`로
     // 바꾸어 봅시다.
     Card(
-        elevation = LocalElevation.current,
         modifier = Modifier.padding(8.dp)
     ) {
         Column(
