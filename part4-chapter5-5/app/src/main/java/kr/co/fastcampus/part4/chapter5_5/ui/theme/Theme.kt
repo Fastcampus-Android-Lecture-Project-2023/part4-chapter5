@@ -18,10 +18,13 @@ private val DarkColorPalette = darkColors(
 
 // 단계 3: `primary`와 `onPrimary` 값도 바꾸어봅시다.
 private val LightColorPalette = lightColors(
-    primary = Purple500,
+//    primary = Purple500,
+    primary = Color.Gray,
+    onPrimary = Color.Cyan,
     primaryVariant = Purple700,
     secondary = Teal200,
-
+    onBackground = Color.Magenta,
+    surface = Color.Red
 
     /* Other default colors to override
     background = Color.White,
