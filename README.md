@@ -46,6 +46,8 @@ Part4 Chapter5의 예제와 실습을 모두 담고 있습니다.
 
 [part4-chapter5-4](part4-chapter5-4) 디렉토리를 Android Studio에서 오픈하세요.
 
+![Composition Local 예](./screenshots/composition-local.png)
+
   * 단계 1: `CompositionLocalProvider`을 이용하면 특정 블록에 암시적인 값을 설정할 있습니다.
   `CompositionLocalProvider(LocalContentAlpha provides ContentAlpha.abled)`
   등을 설정해봅시다.
@@ -64,3 +66,18 @@ Part4 Chapter5의 예제와 실습을 모두 담고 있습니다.
  * 단계 5: Card의 elevation에 `LocalElevation`을 적용해봅시다.
  * 단계 6: LocalElevation의 값을 `CompositionLocalProvider`로
   바꾸어 봅시다.
+
+## Compose Theme 실습코드 (part4-chapter5-5)
+
+[part4-chapter5-5](part4-chapter5-5) 디렉토리를 Android Studio에서 오픈하세요.
+
+![Theme 예](./screenshots/theme.png)
+
+ * 단계 1: ThemeTestTheme으로 이동합니다.
+
+ * 단계 2: `onBackground` 값을 할당합니다.
+   `surface` 값도 할당해봅시다.
+
+ * 단계 3: `primary`와 `onPrimary` 값도 바꾸어봅시다.
+
+ * 단계 4: `body1`의 `fontSize`를 변경해봅시다.
