@@ -75,7 +75,7 @@ Part4 Chapter5의 예제와 실습을 모두 담고 있습니다.
 
  * 단계 1: ThemeTestTheme으로 이동합니다.
 
- * 단계 2: `onBackground` 값을 할당합니다.
+ * 단계 2: `onSurface` 값을 할당합니다.
    `surface` 값도 할당해봅시다.
 
  * 단계 3: `primary`와 `onPrimary` 값도 바꾸어봅시다.
