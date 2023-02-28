@@ -3,12 +3,19 @@ package kr.co.fastcampus.part4.chapter5_6
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.material.Button
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.Surface
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import kr.co.fastcampus.part4.chapter5_6.ui.theme.NavigationTheme
 
 class MainActivity : ComponentActivity() {
@@ -32,6 +39,7 @@ class MainActivity : ComponentActivity() {
 @Composable
 fun MyNav(
     modifier: Modifier = Modifier,
+    navController: NavHostController = rememberNavController()
 ) {
     // 단계 3: `NavHost`를 만듭니다.
     // `navController`, `"Home"`, `modifier`를 전달합시다.
@@ -62,6 +70,92 @@ fun MyNav(
     // composable을 만드세요.
     // `arguments?.get("userId")`을 받아 출력하세요.
     // "Argument/fastcampus"로 이동하는 버튼을 만들어보세요.
+    NavHost(navController, "Home", modifier = modifier) {
+        composable("Home") {
+            Column {
+                Text("Home")
+                Button(onClick = {
+                    navController.navigate("Office") {
+//                        popUpTo("Home") {
+//                            inclusive = true
+//                        }
+                    }
+                }) {
+                    Text("Office로 이동")
+                }
+                Button(onClick = {
+                    navController.navigate("Playground") {
+//                        popUpTo("Home") {
+//                            inclusive = true
+//                        }
+                    }
+                }) {
+                    Text("PlayGround로 이동")
+                }
+            }
+        }
+        composable("Office") {
+            Column {
+                Text("Office")
+                Button(onClick = {
+                    navController.navigate("Playground") {
+//                        popUpTo("Home") {
+//                            inclusive = true
+//                        }
+                    }
+                }) {
+                    Text("Playground 이동")
+                }
+                Button(onClick = {
+                    navController.navigate("Home") {
+//                        popUpTo("Home") {
+//                            inclusive = true
+//                        }
+                    }
+                }) {
+                    Text("Home으로 이동")
+                }
+            }
+        }
+        composable("Playground") {
+            Column {
+                Text("PlayGround")
+                Button(onClick = {
+                    navController.navigate("Office") {
+//                        popUpTo("Home") {
+//                            inclusive = true
+//                        }
+                    }
+                }) {
+                    Text("Office로 이동")
+                }
+                Button(onClick = {
+                    navController.navigate("Home") {
+//                        popUpTo("Home") {
+//                            inclusive = true
+//                        }
+                    }
+                }) {
+                    Text("Home으로 이동")
+                }
+                Button(onClick = {
+                    navController.navigate("Argument/fastcampus") {
+//                        popUpTo("Home") {
+//                            inclusive = true
+//                        }
+                    }
+                }) {
+                    Text("Argument로 이동")
+                }
+            }
+        }
+
+
+        composable("Argument/{userId}") { backStackEntry ->
+            val userId = backStackEntry.arguments?.get("userId")
+            Text("userId: $userId")
+        }
+    }
 }
 
 @Preview(showBackground = true)
