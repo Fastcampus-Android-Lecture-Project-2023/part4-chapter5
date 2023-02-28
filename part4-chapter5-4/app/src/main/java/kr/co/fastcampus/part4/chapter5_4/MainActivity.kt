@@ -34,7 +34,6 @@ class MainActivity : ComponentActivity() {
 }
 
 // 단계 4: `compositionLocalOf`에 `8.dp`를 넣어 `LocalElevation`을 할당합니다.
-val LocalElevation = compositionLocalOf { 16.dp }
 
 @Composable
 fun Greeting() {
