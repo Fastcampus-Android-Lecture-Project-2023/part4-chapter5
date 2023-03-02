@@ -7,6 +7,7 @@
     <!--  단계 1: DIApp 클래스를 android:name 항목으로 연결합니다.-->
     <application
         android:allowBackup="true"
+        android:name=".DIApp"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
         android:icon="@mipmap/ic_launcher"

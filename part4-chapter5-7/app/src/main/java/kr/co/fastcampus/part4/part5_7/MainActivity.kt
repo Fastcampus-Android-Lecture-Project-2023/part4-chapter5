@@ -19,6 +19,7 @@ import kr.co.fastcampus.part4.part5_7.ui.theme.DITheme
 import kr.co.fastcampus.part4.part5_7.viewmodel.GithubViewModel
 
 // 단계 3: Activity에 @AndroidEntryPoint를 넣어줍시다.
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
