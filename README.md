@@ -141,3 +141,23 @@ Part4 Chapter5의 예제와 실습을 모두 담고 있습니다.
  * 단계 6: @HiltViewModel 어노테이션을 지정합니다.
 
  * 단계 7: 생성자에 @Inject를 붙여줍시다.
+
+## Compose Pokemon 실습코드 (part4-chapter5-9)
+
+[part4-chapter5-9](part4-chapter5-9) 디렉토리를 Android Studio에서 오픈하세요.
+
+![Pokemon 예](./screenshots/pokemon.png)
+
+ * 단계 1: viewModel을 제대로 설정하자. `hiltViewModel()`를 사용한다.
+
+ * 단계 2: `offset=20&limit=20` 형태의 주소에서 `prevKey`와 `nextKey`를 만들어 전달하자.
+
+ * 단계 3: arguments 파라미터를 설정하자.
+  ```
+  navArgument("pokemenId") {
+  type = NavType.IntType
+  }
+  ```
+  리스트로 전달해야 한다.
+
+* 단계 4: `pokemonId`를 `Int`값으로 가져오자. (`arguments?.getInt`를 이용)

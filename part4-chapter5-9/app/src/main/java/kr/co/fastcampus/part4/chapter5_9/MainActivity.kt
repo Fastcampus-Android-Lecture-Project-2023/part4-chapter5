@@ -58,9 +58,11 @@ fun TopLevel(
         }
 
         // 단계 3: arguments 파라미터를 설정하자.
+        // ```
         // navArgument("pokemenId") {
         // type = NavType.IntType
         // }
+        // ```
         // 리스트로 전달해야 한다.
         composable(
             "Detail/{pokemonId}",
@@ -70,7 +72,7 @@ fun TopLevel(
                 }
             )
         ) {
-            // 단계 4: pokemonId를 Int값으로 가져오자. (arguments?.getInt를 이용)
+            // 단계 4: `pokemonId`를 `Int`값으로 가져오자. (`arguments?.getInt`를 이용)
             val pokemonId = it.arguments?.getInt("pokemonId") as Int
             DetailScreen(
                 pokemonId = pokemonId,
