@@ -122,3 +122,22 @@ Part4 Chapter5의 예제와 실습을 모두 담고 있습니다.
   composable을 만드세요.
   `arguments?.get("userId")`을 받아 출력하세요.
   "Argument/fastcampus"로 이동하는 버튼을 만들어보세요.
+
+## Compose DI 실습코드 (part4-chapter5-7)
+
+[part4-chapter5-7](part4-chapter5-7) 디렉토리를 Android Studio에서 오픈하세요.
+
+![DI 예](./screenshots/di.png)
+
+ * 단계 1: DIApp 클래스를 android:name 항목으로 연결합니다.
+
+ * 단계 2: DIApp을 `@HiltAndroidApp`로 어노테이션합니다.
+
+ * 단계 3: Activity에 @AndroidEntryPoint를 넣어줍시다.
+
+ * 단계 4: `AppModules`에 `@Module` 어노테이션과 `@InstallIn(SingletonComponent::class)`
+  어노테이션을 추가합니다.
+
+ * 단계 6: @HiltViewModel 어노테이션을 지정합니다.
+
+ * 단계 7: 생성자에 @Inject를 붙여줍시다.
