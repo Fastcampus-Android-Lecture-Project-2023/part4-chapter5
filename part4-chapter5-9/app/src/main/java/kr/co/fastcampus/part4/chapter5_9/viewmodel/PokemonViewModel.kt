@@ -31,7 +31,8 @@ class PokemonViewModel @Inject constructor(
     private fun getPokemons(): Flow<PagingData<Response.Result>> = Pager(
         config = PagingConfig(
             pageSize = 20,
-            enablePlaceholders = true
+            enablePlaceholders = true,
+            prefetchDistance = 5
         ),
         pagingSourceFactory = {
             object : PagingSource<Int, Response.Result>() {
